@@ -1,32 +1,52 @@
 // No cambies los nombres de las funciones.
 
 function deObjetoAmatriz(objeto){
-  // Escribe una función que convierta un objeto en una matriz, donde cada elemento representa 
-  // un par clave-valor en forma de matriz.
-  //Ejemplo: 
-  /*objeto({
+    // Escribe una función que convierta un objeto en una matriz, donde cada elemento representa 
+    // un par clave-valor en forma de matriz.
+    //Ejemplo: 
+    /*objeto({
       D: 1,
       B: 2,
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
-  //Escribe tu código aquí
-}
+    //Escribe tu código aquí
+    var arr = []
+    for (var i in objeto ) {
+      arr.push ([i, objeto[i]])    
+    }
+    return arr
+  }
+  
 
 
 function numberOfCharacters(string) {
-  //La función recibe un string. Recorre el srting y devuelve el caracter con el número de veces que aparece 
-  //en formato par clave-valor.
-  //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
-  //Escribe tu código aquí
-}
+    //La función recibe un string. Recorre el srting y devuelve el caracter con el número de veces que aparece 
+    //en formato par clave-valor.
+    //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
+    //Escribe tu código aquí
+    var letras = {}
+    for ( var i = 0 ; i < string.length ; i++ ) {
+      var letra = string [i]
+      if (letras [letra] === undefined) {
+        letras [letra] = 1
+      } else letras [letra] += 1
+    } return letras
+  }
 
 
-function capToFront(s) {
-  //Realiza una función que reciba como parámetro un string y mueva todas las letras mayúsculas
-  //al principio de la palabra.
-  //Ejemplo: soyHENRY -> HENRYsoy
-  //Escribe tu código aquí
-}
+function capToFront(string) {
+    //Realiza una función que reciba como parámetro un string y mueva todas las letras mayúsculas
+    //al principio de la palabra.
+    //Ejemplo: soyHENRY -> HENRYsoy
+    //Escribe tu código aquí
+    var min = ''
+    var may = ''
+    for ( var i = 0 ; i < string.length ; i++){
+      if ( string [i] === string [i].toUpperCase()){
+        may += string [i]
+      } else min += string [i]
+    } return may + min
+  }
 
 
 function asAmirror(str) {
